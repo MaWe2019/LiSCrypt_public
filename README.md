@@ -32,13 +32,14 @@ Nähere Informationen zu den benötigten Fremdquellen finden sich in der Dokumen
 2. Update von pip:
     ```
     python3 -m pip install --upgrade pip
+<<<<<<< HEAD
     ``'
     
 3. Installieren der benötigten Abhängigkeiten (in den Versionen, mit denen LiSCrypt 0.9 getestet wurde):
     ```
-    pip3 install base91==1.0.1 cryptography==2.5 psutil==5.5.0 PyQt5==5.11.2 PyYAML==3.13 pywin32==224  
-    ```
- 
+    pip3 install base91==1.0.1 cryptography==2.5 psutil==5.5.0 PyQt5==5.11.2 PyYAML==3.13 pywin32==224
+    ``` 
+
 3. Klonen des LiSCrypt-Repositories:
     ```
     git clone https://bitbucket.org/MW2018/liscrypt_public/ 
@@ -94,4 +95,8 @@ LiSCrypt ist lizenziert unter der GNU General Public License Version 3 (GNU GPL 
 
 ## ToDo
 
+<<<<<<< HEAD
 * Fertigstellung der (derzeit veralteten und lückenhaften) API-Dokumentation.
+=======
+* Fertigstellung der (derzeit veralteten und lückenhaften) API-Dokumentation.
+>>>>>>> f2163bc4555c93b80bb711b6ef22e3c306f2a364
