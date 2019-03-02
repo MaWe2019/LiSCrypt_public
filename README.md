@@ -39,19 +39,15 @@ Nähere Informationen zu den benötigten Fremdquellen finden sich in der Dokumen
     pip3 install base91==1.0.1 cryptography==2.5 psutil==5.5.0 PyQt5==5.11.2 PyYAML==3.13 pywin32==224
     ``` 
 
-3. Klonen des LiSCrypt-Repositories:
-    ```
-    git clone https://bitbucket.org/MW2018/liscrypt_public/ 
-    ```
-    oder alternativ Herunterladen des Quelltextes als [ZIP-Archiv](https://bitbucket.org/MW2018/liscrypt_public/downloads/).
+4. Herunterladen des LiSCrypt-Quelltextes von https://github.com/MaWe2019/LiSCrypt_public/releases
 
-4. Starten des Programms:
+5. Starten des Programms:
     ```
     python3 -m Steuerung.LiSCrypt
     ```
     oder Import in eine beliebige Python-IDE. Entwickelt wurde Python mit der Community-Variante von [PyCharm](https://www.jetbrains.com/pycharm/download/).
     
-5. Test aller Programmfunktionen (Verschlüsseln, Entschlüsseln, Vernichten) mit Dummy-Dateien.
+6. Test aller Programmfunktionen (Verschlüsseln, Entschlüsseln, Vernichten) mit Dummy-Dateien.
 
 ### Ausrollen
 
