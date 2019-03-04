@@ -13,7 +13,7 @@ Voraussetzungen für die Verwendung von LiSCrypt
 * Windows, macOS oder Linux
 
 ### Benötigte Bibliotheken
-LiSCrypt 0.9. wurde u.a. mit den im Folgenden angegebenen Versionen getestet. Möglicherweise funktionieren insb. neuere Versionen ebenfalls.
+LiSCrypt 0.9.1 wurde u.a. mit den im Folgenden angegebenen Versionen getestet. Möglicherweise funktionieren insb. neuere Versionen ebenfalls.
 
 * [base91, Version 1.0.1](https://github.com/aberaud/base91-python) - Base91-Kodiere/-Dekodierer
 * [pyca/cryptography, Version 2.5](https://cryptography.io/en/latest/) - Kryptografie-Backend
