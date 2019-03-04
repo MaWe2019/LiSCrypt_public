@@ -45,7 +45,7 @@ Nähere Informationen zu den benötigten Fremdquellen finden sich in der Dokumen
     ```
     python3 -m Steuerung.LiSCrypt
     ```
-    oder Import in eine beliebige Python-IDE. Entwickelt wurde Python mit der Community-Variante von [PyCharm](https://www.jetbrains.com/pycharm/download/).
+    oder Import in eine beliebige Python-IDE. Entwickelt wurde LiSCrypt mit der Community-Variante von [PyCharm](https://www.jetbrains.com/pycharm/download/).
     
 6. Test aller Programmfunktionen (Verschlüsseln, Entschlüsseln, Vernichten) mit Dummy-Dateien.
 
