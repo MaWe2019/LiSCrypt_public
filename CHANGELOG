@@ -1,0 +1,268 @@
+# Changelog
+Alle relevanten Änderungen an diesem Projekt werden in dieser Datei vermerkt.
+
+Das Format basiert auf [Keep a Changelog](http://keepachangelog.com/de/1.0.0/)
+und die Versionierung des Projekts richtet sich nach [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
+
+## [Unveröffentlicht]
+-
+
+## [0.9.3] - 2019-03-06
+### Changed
+- (Symbolische) Verknüpfungen und named pipes werden bei der Vernichtung nicht mehr übersprungen, sondern entfernt
+- default-Aktion bei gültigem Aufruf mit Parametern ist jetzt '--decrypt' (statt vorher '--encrypt')
+- Dokumentation um Doppelklick-Funktionalität (siehe Version 0.9.2) ergänzt
+- Dokumentation um Hinweis zur grundsätzlichen Funktionsweise von LiSCrypt (entschlüsseln, nicht öffnen) ergänzt
+- Dokumentation um Fehlermeldungen ergänzt
+### Bug fix
+- Konfiguration wird nur noch einmal (statt fälscherlicherweise zweimal) eingelesen
+
+## [0.9.2] - 2019-03-02
+### Changed
+- Entschlüsselung im System-Temporärverzeichnis wird aus Sicherheitsgründen verhindert
+- Doppelklick auf Eintrag in Protokoll öffnet den jeweiligen Ordner im Dateimanager
+- Entfernung der Anmerkung 'Pfad zu lang?' aus Fehlermeldung, falls Datei/Verzeichnis nicht gefunden wird
+- pyca/cryptography auf Version 2.6.1 aktualisiert
+- psutil auf Version 5.5.1 aktualisiert
+### Bug fix
+- Thread-Handling verbessert: Auch offener Dialog verhindert Parallelausführung mit Parametersteuerung
+
+## [0.9.1] - 2019-02-20
+### Changed
+- Tippfehler in LiSVernichtung (Meldung: 'felgeschlagen') beseitigt
+- URL in Über-Dialog korrigiert (liscrypt_public)
+- README.MD zum Repository hinzugefügt
+- PyQt5 in Version 5.11.2 geändert
+- pyca/cryptography auf Version 2.5 aktualisiert
+- psutil auf Version 5.5.0 aktualisiert
+- Kleinere Fehler in Dokumentation korrigiert
+- Versionskonstante in LiSKonstanten auf 0.9.1 geändert
+- Windows: Distribution inkl. vcredist_x86 2015 Update 3 und vcredist_x64 2015 Update 3
+- Veraltete verschlüsselte Testdateien entfernt
+- Tippfehler in Menü entfernt ('Über LisCrypt' -> 'Über LiSCrypt')
+- Installer verweigert jetzt Installation auf 32-Bit-Systemen
+
+## [0.9] - 2019-01-29
+### Changed
+- Separate IQB-Version über Boolean-Flag LiSKonstanten.C_IQB_VERSION
+- Passworteingabe jetzt optional sichtbar
+- Verwendung von argparse zum Parsen der Aufrufparameter
+- Blockierung von Anweisungen per Parameter, während Funktionsprozess läuft (concurrency)
+- Optimierung der Vernichtungsroutine
+- Entfernung der mit pywin32 testweise realisierten Windows-Shell-Extension
+- Auslassung der Schlüsselart beim Kommandozeilenaufruf öffnet Dialogfenster zur Schlüsselwahl
+- .ico-Datei mit mehreren Auflösungen (16x16 bis 256x256) hinzugefügt
+- Ergänzung und Überarbeitung einiger Dokumentationskommentare
+### Bug fix
+- Korrektur / -> // für Ganzzahldivision in LiSWindowsWipe (Python 2 -> Python 3)
+- Abfangen von OSError in Dateidialogen (tritt z.B. bei leeren CD-Laufwerken auf) (filterAcceptsRow())
+- Spätere Schlüsselart-Auswahl ist nur noch default, wenn nicht IQB-Version (sonst Passwort)
+- Vermeidung von race conditions bei os.rename auf Netzlaufwerken in LiSVernichtung.py
+- SchluesselartMessageBox schließt jetzt korrekt bei Betätigung des Close-Buttons (X)
+- "Beschäftigt"-MessageBox funktioniert jetzt korrekt
+
+## [0.6.4] - 2018-12-21
+### Changed
+- Auswahl für Schlüsseldatei optimiert (u.a. keine Auswahl von Leerdateien möglich)
+- Anzeige einer Warnung vor Leerung der Zwischenablage
+
+## [0.6.3] - 2018-12-12
+### Changed
+- Schlüssellänge für HMAC bei ChaCha20 auf 64 Bit erweitert
+- Option 'ReadOnly' für Dateidialoge gesetzt, um unsicheres Löschen zu unterbinden
+- Prüfung auf leeren Passwortstring bei Berechnung des SHA256- und SHA512-Hashwertes
+- Anleitung erweitertert (noch nicht fertig gestellt)
+### Bug fix
+- Überprüfung der Lebensdauer eines Schlüssels korrigiert und ausgeweitet
+
+## [0.6.2] - 2018-12-10
+### Changed
+- Temporäre V2_1-Verschlüsselungsformate entfernt
+
+## [0.6.1] - 2018-12-10
+### Bug fix
+- Anzeige der Funktion bei Funktionsausführung jetzt korrekt
+- Update des Statusleiste wird nur durchgeführt, wenn neuer Text sich von altem unterscheidet
+- Symbolische Links werden nun erst bei Funktionsausführung ausgefiltert
+
+## [0.6] - 2018-12-06
+### Changed
+- Einführung der Verschlüsselungsschemata AES-GCM-V3 bzw. ChaCha20-V3
+- Konstanter Crypt-Schlüssel für maximale Anzahl von Dateien
+- Ableitung der Nonce für AES-GCM bzw. ChaCha20 jetzt per HKDF mit Zähler statt per Zufall
+- Komplette Umstellung auf SHA512 (statt vormals SHA256)
+
+## [0.5.1] - 2018-11-21
+### Changed
+- Beschränkung auf HKDF-Expand bei Verschlüsselung
+
+## [0.5.0] - 2018-11-20
+### Changed
+- Kryptographie-Backend von PyCryptodome zu Cryptography gewechselt
+- Verzicht auf base91-Kodierung von Input für Scrypt (Rückwärtskompatibilität ist sichergestellt)
+- Sicherheitsparameter für Scrypt angepasst (N=2**18)
+
+## [0.4.9] - 2018-11-14
+### Changed
+- Nullfolge in den verschlüsselten Dateiinhalten vorangestellt (Beschleunigt Prüfung der Entschlüsselung)
+
+## [0.4.8] - 2018-11-13
+### Changed
+- Sicherheitsparameter für Scrypt angepasst (N=2**17)
+
+## [0.4.7] - 2018-11-13
+### Bug fix
+- Vernichtung verursacht auf Netzwerklaufwerken jetzt keine Fehlermeldung mehr
+- Nach Vernichtung bleibt die Auswahl zur Schlüsselart jetzt deaktiviert
+
+## [0.4.6] - 2018-11-09
+### Bug fix
+- Wiederholte Berechnung von Master-Schlüssel bei Entschlüsselung, falls notwendig
+- Fehler bei Auswertung der Aufrufparameter behoben
+- Reduzierung des Scrypt-Aufwandsfaktors N auf 2**18
+
+## [0.4.5] - 2018-10-31
+### Bug fix
+- Print-Anweisungen zum Debugging entfernt
+
+## [0.4.4] - 2018-10-31
+### Bug fix
+- Fehler in der Entschlüsselung behoben (Entschlüsselung setzte zu früh in der Quelldatei auf)
+
+## [0.4.3] - 2018-10-18
+### Bug fix
+- Fehlermeldung beim "Ungültiger Befehl." Start über Kommandozeile sollte nun in den richtigen fällen angezeigt werden
+- Version für Albert!
+
+## [0.4.2] - 2018-10-18
+### Bug fix
+- Client-Server-Kommunikation optimiert
+- Version für Albert!
+
+## [0.4.1] - 2018-10-17
+### Changed
+- Kommandozeilenparameter eingeführt
+- Client-Server-Kommunikation für neue Instanzen eingeführt
+
+## [0.4] - 2018-10-12
+### Changed
+- Vernichtungsroutine deutlich ausgebaut
+- Klassenstruktur der Vernichtungsklasse deutlich optimiert
+- Block für zu alte Versionen implementiert
+
+## [0.3.20] - 2018-10-05
+### Changed
+- Kommandozeilenparameter '-logfile' eingeführt, Logging sonst in Konsole, ebenso Zugriffsproblemen auf Logdatei
+- Konnte der Root-Logger vor einem fatalen Fehler noch nicht gestartet werden, erfolgt Fehlerausgabe mit print()
+- Für SHA256-Berechnung wird nun die SHA256-Implementation von PyCryptodome verwendet
+- Debug-Print-Ausgaben bei Ver- und Entschlüsselung entfernt
+
+## [0.3.19] - 2018-10-01
+### Bug fix
+- Fehlerlogging bei nicht vorhandener Konfigurationsdatei angepasst
+
+## [0.3.18] - 2018-10-01
+### Bug fix
+- Fehlermeldung beseitigt, falls Konfigurationsdatei beim Programmstart nicht gefunden wird.
+
+## [0.3.16] - 2018-10-01
+### Changed
+- Verzeichnisse für Konfig- und Logdatei sowie Arbeitsverzeichnis werden jetzt betriebssysmabhängig festgelegt
+
+## [0.3.15-rc1-10] - 2018-09-26
+### Changed
+- Längere Saltwerte zur Steigerung der Sicherheit
+
+## [0.3.15-rc1-9] - 2018-09-26
+### Changed
+- Änderung der Programmstruktur (Aufteilung auf Klassen, Abtrennung der Dateibehandlung in LiSKrypto.py)
+- Header-Erzeugung und -Verarbeitung in Methoden ausgelagert
+- Schlüsselermittlung und Ver- bzw. Entschlüsselungsprozess für verschiedene Verfahren stark modularisiert
+- Einführung Kombination aus MK (Scrypt mit sehr hohem Aufwandsfaktor) und DPK (HDKF)
+- Lodatei wird nun bei jedem Programmstart geleert
+- Gründlichere Prüfung auf geeignete Dateien für Programmfunktion (ansonsten Fehlermeldung)
+- Skalierung für HighDPI-Monitor zunächst deaktiviert (Probleme unter Linux)
+
+## [0.3.15-rc1-8] - 2018-09-02
+### Changed
+- Datei-Chunkgröße für SHA256-Hashberechnung und Ver- bzw. Entschlüsselung wird nun nicht mehr im Header
+von verschlüsselten Dateien gespeichert, da bei AES-GCM, ChaCha20 und SHA256 beliebig.
+- Neue Konstanten C_VERFAHREN_AES_GCM_KENNUNG_V2 und C_VERFAHREN_AES_CHACHA20_KENNUNG_V2 zur Sicherung der
+Kompatibilität mit Versionen < 0.3.15-rc1-8 zu gewährleisten.
+- Entschlüsselung entsprechend angepasst; Lesen der Datei-Chunkgröße erfolgt nur bei Verfahrenskennung
+C_VERFAHREN_AES_GCM_KENNUNG_V1 oder C_VERFAHREN_AES_CHAHCA20_KENNUNG_V1 in verschlüsselter Datei
+
+## [0.3.15-rc1-7] - 2018-08-03
+### Fixed
+- Skalierungsoptionen angepasst. Keine Maximalgrößen mehr gesetzt.
+
+## [0.3.15-rc1-6] - 2018-07-20
+### Fixed
+- Beschriftung des Aktionsbuttons von Dateiauswahldialogen bleibt bei Selektion eines Verzeichnisses erhalten
+
+## [0.3.15-rc1-5] - 2018-07-19
+### Changed
+- Sortierung der Dateiauswahldialoge ist jetzt fest und folgt weitergehend dem Windowsschema (Verzeichnisse vor Dateien, sonst alphabetisch)
+- Schlüsseldateien bekommen jetzt die Endung '.txt', wenn keine Endung angegeben wird
+- Die Sicherheitsabfrage vor dem Überschrieben von Schlüsseldateien ist jetzt qt-nativ
+
+## [0.3.15-rc1-4] - 2018-07-18
+### Changed
+- Vorgeschlagener Name für Schlüsseldateien endet jetzt auf '.txt'
+
+## [0.3.15-rc1-3] - 2018-07-18
+### Fixed
+- Verschlüsselung: Ersetzung des letzten Punktes in Dateipfaden durch Minuszeichen auf Endnamen (tail) beschränkt
+### Changed
+- Verzeichnisse werden in Auswahldialogen jetzt vor Dateien einsortiert; Änderung Detailansicht->Listenansicht
+- Sortierung im +-Auswahldialog ist nun nicht mehr Case Sensitive
+
+## [0.3.15-rc1-2] - 2018-07-16
+### Fixed
+- Treeview-Verweis in Klasse KombinierterFileDialog wieder global gemacht
+
+## [0.3.15-rc1] - 2018-07-16
+### Changed
+- qm-Translation-Datei als base64-String in LiSKonstanten aufgenommen
+- Sicherheitsabfrage beim Überschreiben von Schlüsseldateien eingeführt
+- Auswahlmöglichkeit für die Anzeige von Dateien im Auswahldialog (+-Button) eingeführt
+
+## [0.3.14] - 2018-07-13
+### Changed
+- Klasse Ui_KeyFileDialog.SchluesseldateiFileDialog eingeführt
+
+## [0.3.13] - 2018-06-07
+### Fixed
+- +-Button wird nun während Aktion auf inaktiv gesetzt
+
+## [0.3.12] - 2018-06-06
+### Changed
+- Pulldown-Menüs entfernt (Verschlüsseln/Entschlüsseln/Vernichten)
+-+-Button zur Dateiauswahl hinzugefügt
+
+## [0.3.11] - 2018-05-21
+### Fixed
+- Vernichten über Pulldownmenü sollte jetzt funktionieren
+- Bestätigungsdialog beim Vernichten enthält nun den richtigen Text
+
+## [0.3.10] - 2018-05-18
+### Fixed
+- Berechnung der Dateinamenlänge auf Basis der verwendeten Bytes (nicht Zeichen)
+
+## [0.3.9] - 2018-05-18
+### Changed
+- Allgemeines Logging bei Fehlern im Verschlüssungs-, Entschlüsselung und Vernichtungsprozess hinzugefügt
+
+## [0.3.7] - 2018-05-18
+### Fixed
+- Bug bei AES-Entschlüsselung korrigiert (Verwendung einer Variablen vor Zuweisung)
+
+### Changed
+- Lizenz (GPL) entfernt
+
+## [0.3.6] - 2018-05-17
+### Changed
+- Länge des ursprünglichen Dateinamen wird nun unverschlüsselt im Header gespeichert.
+
+### Fixed
+- Ver- und Entschlüsselung von großen Dateien mit ChaCha20
