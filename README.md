@@ -73,7 +73,7 @@ Sie möchten uns bei der Weiterentwicklung von LiSCrypt unterstützen? Wenden Si
 
 ## Versionierung und Updates
 
-Die Versionierung von LiSCrypt folgt dem [SemVer](http://semver.org/)-Schema. Die verschiedenen Versionen sind durch Tags in [diesem Repository](https://github.com/your/project/tags) markiert. 
+Die Versionierung von LiSCrypt folgt dem [SemVer](http://semver.org/)-Schema. Der [Quelltext zu den verschiedenen Versionen](https://github.com/MaWe2019/LiSCrypt_public/releases) wird in Form von zip-Archiven in diesem Repository zur Verfügung gestellt.
 
 ## Copyright
 
