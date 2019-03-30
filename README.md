@@ -1,4 +1,4 @@
-# LiSCrypt 0.9.3
+# LiSCrypt 0.9.4
 LiSCrypt ist ein Programm zur symmetrischen Verschlüsselung von Einzeldateien unter Verwendung von AES-GCM-256 bzw. einer Kombination von ChaCha20 und HMAC für sehr große Dateien.
 
 Es wurde ursprünglich von der Qualitäts- und UnterstützungsAgentur - Landesinstitut für Schule in Nordrhein-Westfalen entwickelt.
@@ -13,14 +13,14 @@ Voraussetzungen für die Verwendung von LiSCrypt
 * Windows, macOS oder Linux
 
 ### Benötigte Bibliotheken
-LiSCrypt 0.9.3 wurde u.a. mit den im Folgenden angegebenen Versionen getestet. Möglicherweise funktionieren insb. neuere Versionen ebenfalls.
+LiSCrypt 0.9.4 wurde u.a. mit den im Folgenden angegebenen Versionen getestet. Möglicherweise funktionieren insb. neuere Versionen ebenfalls.
 
 * [base91, Version 1.0.1](https://github.com/aberaud/base91-python) - Base91-Kodiere/-Dekodierer
 * [pyca/cryptography, Version 2.6.1](https://cryptography.io/en/latest/) - Kryptografie-Backend
-* [psutil, Version 5.5.1](https://psutil.readthedocs.io) - Bibliothek für die Ermittlung von Systeminformationen
+* [psutil, Version 5.6.1](https://psutil.readthedocs.io) - Bibliothek für die Ermittlung von Systeminformationen
 * [PyQt 5, Version 5.12](https://riverbankcomputing.com/software/pyqt/intro) - Python-Schnittstelle zum GUI-Framework Qt 5
 * Unter Windows: [pywin32, Version 224](https://github.com/mhammond/pywin32) - Bibliothek für Zugriff auf die Windows API
-* [PyYAML, Version 3.13](https://pyyaml.org/) - Bibliothek für Im- und Export von YAML-Dateien
+* [PyYAML, Version 5.1](https://pyyaml.org/) - Bibliothek für Im- und Export von YAML-Dateien
 
 Nähere Informationen zu den benötigten Fremdquellen finden sich in der Dokumentation.
 
@@ -36,7 +36,7 @@ Nähere Informationen zu den benötigten Fremdquellen finden sich in der Dokumen
     
 3. Installieren der benötigten Abhängigkeiten (in den Versionen, mit denen LiSCrypt 0.9 getestet wurde):
     ```
-    pip3 install base91==1.0.1 cryptography==2.6.1 psutil==5.5.1 PyQt5==5.12 PyYAML==3.13 pywin32==224  
+    pip3 install base91==1.0.1 cryptography==2.6.1 psutil==5.6.1 PyQt5==5.12 PyYAML==5.1 pywin32==224  
     ```
  
 3. Herunterladen des LiSCrypt-Quelltextes von https://github.com/MaWe2019/LiSCrypt_public/releases

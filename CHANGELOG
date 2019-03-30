@@ -7,6 +7,34 @@ und die Versionierung des Projekts richtet sich nach [Semantic Versioning](http:
 ## [Unveröffentlicht]
 -
 
+## [0.9.4] - 2019-03-30
+### Changed
+- Zusammenarbeit zwischen View-Komponenten und Controller-Komponenten bei Schlüsseldateierzeugung modifziert
+- Option zum Kopieren des Verlaufprotokolls in die Zwischenablage im Pulldownmenu hinzugefügt
+- Programmfunktion 'Vernichten' aus IQB-Version entfernt
+- Abbruchmöglichkeit während Funktionsprozess (bei Ver- und Eetschlüsselung)
+- Explizite Berücksichtigung von Names Pipes (FIFOs) bei Ver- und Entschlüsselung
+- Verbesserung des Exception-Handlings
+- Anfang: Verbesserung der Statusanzeige in Statuszeile
+- Reaktion auf QFileOpenEvent unter macOS
+- IQB-Version verwendet jetzt Endung '.lisq' statt '.lisx'
+- Statuszeile gibt jetzt genauer über aktuell ausgeführte Funktion Auskunft
+- Kennzeichnung einiger Methoden zu alten Verschlüsselungsverfahren als DEPRECATED
+- PyYAML auf Version 5.1 aktualisiert
+- yaml.load() für Konfigurationsdatei jetzt unter Angabe eines Loaders (arbitrary code execution vulnarability)
+- 'Verzeichnis' durch 'Ordner' ersetzt in Ui_Listdialog.py
+- psutil auf Version 5.6.1 aktualisiert
+- Pulldown-Menü 'Bearbeiten' aus IQB-Version entfernt
+- Anpassung einiger Fehlermeldungen
+- Ausweitung der Endnutzer-Dokumentation
+- Verhinderung der Verschlüsselung einer Schlüsseldatei mit sich selbst (Fehlermeldung)
+- Austausch einzelner Assert-Statements gegen if-Abfragen
+### Bug fix
+- Fehlversuch, eine Schlüsseldatei zu erzeugen resultiert jetzt korrekt in Fehlermeldung
+- Doppelklick auf Einträge im Listenfeld OHNE Tooltip (i.d.R. Pfadangabe) öffnet nicht mehr den Dateimanager
+- Löschen der Zwischenablage funktioniert wieder korrekt
+- Auswahldialog-Option 'Nur verschlüsselte Dateien [...] ausblenden' in 'Verschlüsselte Dateien ausblenden' geändert
+
 ## [0.9.3] - 2019-03-06
 ### Changed
 - (Symbolische) Verknüpfungen und named pipes werden bei der Vernichtung nicht mehr übersprungen, sondern entfernt
