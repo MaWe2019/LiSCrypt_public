@@ -7,7 +7,13 @@ und die Versionierung des Projekts richtet sich nach [Semantic Versioning](http:
 ## [Unveröffentlicht]
 -
 
-## [0.9.4] - 2019-03-30
+## [0.9.5] - 2019-04-02
+### Changed
+- LiSCrypt IQB nutzt anderes Verzeichnis als LiSCrypt für Konfigurationsdatei unter Windows, macOS und Linux
+### Bug fix
+- Unter macOS öffnet sich jetzt korrekt der Finder bei Klick auf Protokolleintrag (Umsetzung per subprocess.call)
+
+## [0.9.4] - 2019-04-01
 ### Changed
 - Zusammenarbeit zwischen View-Komponenten und Controller-Komponenten bei Schlüsseldateierzeugung modifziert
 - Option zum Kopieren des Verlaufprotokolls in die Zwischenablage im Pulldownmenu hinzugefügt
