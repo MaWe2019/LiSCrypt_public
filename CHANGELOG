@@ -7,6 +7,15 @@ und die Versionierung des Projekts richtet sich nach [Semantic Versioning](http:
 ## [Unveröffentlicht]
 -
 
+## [0.9.6] - 2019-04-12
+### Changed
+- Ausführung einer Programmfunktion endet jetzt mit Ausgabe einer Ende-Zeile
+- Fehlermeldungen im Prozess resultieren jetzt in einem Hinweisfenster am Ende der Funktionsausführung
+- Verschlüsselung/Entschlüsselung schlägt jetzt fehl, sobald eine Datei im Zugriff ist (+ entsprechende Fehlermeldungen)
+- Erforderliche Version für Entschlüsselung ist jetzt 0.9.6
+### Bug fix
+- Entschlüsselung: Temporär entschlüsselte Dateien (Zufallsname) werden bei Namenskonflikt mit bestehender Datei jetzt in jedem Fall vernichtet
+
 ## [0.9.5] - 2019-04-02
 ### Changed
 - LiSCrypt IQB nutzt anderes Verzeichnis als LiSCrypt für Konfigurationsdatei unter Windows, macOS und Linux
