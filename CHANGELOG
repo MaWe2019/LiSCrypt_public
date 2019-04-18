@@ -7,6 +7,21 @@ und die Versionierung des Projekts richtet sich nach [Semantic Versioning](http:
 ## [Unveröffentlicht]
 -
 
+## [0.9.7] - 2019-04-17
+### Changed
+- CERT.NRW: Austausch von pickle gegen yaml mit SafeLoader zur Vermeidung von Arbitrary Code Execution über Socket
+- CERT.NRW: Whitelisting der per Socket übertragenen Aufrufparameter vor programmatischer Verwendung
+- CERT.NRW: Austausch aller Assert-Statements gegen äquivalente if-Abfragen (Ausnahme: LiSWindowsWipe.py, da Fremdcode)
+- Entfernung von überflüssigem Code aus QFunktionsstarterThread (basierte auf früherer Programmversion)
+- Erforderliche Version für Entschlüsselung ist jetzt 0.9.7
+### Bug fix:
+- Auch symbolische Verknüpfungen (Posix) und FIFOS (named pipes) werden jetzt vor ihrer Vernichtung zweimal zufällig umbenannt
+- 'NoneTypeObject has no attribute...'-Exception bei Info-/Warn-/Fehlerdialogen außerhalb der Ausführung von Programmfunktionen wird vermieden
+- 'LiSKonstanten.C_DATEIENDUNG' -> LiSKonstanten.C_DATEIENDUNG (einige Stellen im Quellcode) korrigiert
+- Vernichtung von Verzeichnissen mit Unterverzeichnissen verursacht keine Fehlermeldung mehr
+- Endzeitpunkt wird nur noch ausgegeben, wenn zuvor ein Startzeitpunkt ausgegeben wurde
+- Aufruf von _zeigeFehlerDialog in _zeigeFehlerDialogModal in Klasse QControllerWorkerThread geändert
+
 ## [0.9.6] - 2019-04-12
 ### Changed
 - Ausführung einer Programmfunktion endet jetzt mit Ausgabe einer Ende-Zeile
