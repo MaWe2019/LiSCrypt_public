@@ -1,4 +1,4 @@
-# LiSCrypt 0.9.7
+# LiSCrypt 1.0.9
 LiSCrypt ist ein Programm zur symmetrischen Verschlüsselung von Einzeldateien unter Verwendung von AES-GCM-256 bzw. einer Kombination von ChaCha20 und HMAC für sehr große Dateien.
 
 Es wurde ursprünglich von der Qualitäts- und UnterstützungsAgentur - Landesinstitut für Schule in Nordrhein-Westfalen entwickelt.
@@ -9,23 +9,23 @@ Die folgenden Ausführungen sollen Ihnen helfen, eine lokale Kopie von LiSCrypt 
 ### Voraussetzungen
 Voraussetzungen für die Verwendung von LiSCrypt
 
-* Python 3.6.x
+* Python 3.9.x
 * Windows, macOS oder Linux
 
 ### Benötigte Bibliotheken
-LiSCrypt 0.9.7 wurde u.a. mit den im Folgenden angegebenen Versionen getestet. Möglicherweise funktionieren insb. neuere Versionen ebenfalls.
+LiSCrypt 1.0.9 wurde u.a. mit den im Folgenden angegebenen Versionen getestet. Möglicherweise funktionieren insb. neuere Versionen ebenfalls.
 
 * [base91, Version 1.0.1](https://github.com/aberaud/base91-python) - Base91-Kodiere/-Dekodierer
-* [pyca/cryptography, Version 2.6.1](https://cryptography.io/en/latest/) - Kryptografie-Backend
-* [psutil, Version 5.6.1](https://psutil.readthedocs.io) - Bibliothek für die Ermittlung von Systeminformationen
-* [PyQt 5, Version 5.12](https://riverbankcomputing.com/software/pyqt/intro) - Python-Schnittstelle zum GUI-Framework Qt 5
-* Unter Windows: [pywin32, Version 224](https://github.com/mhammond/pywin32) - Bibliothek für Zugriff auf die Windows API
-* [PyYAML, Version 5.1](https://pyyaml.org/) - Bibliothek für Im- und Export von YAML-Dateien
+* [pyca/cryptography, Version 3.4.6](https://cryptography.io/en/latest/) - Kryptografie-Backend
+* [psutil, Version 5.8.0](https://psutil.readthedocs.io) - Bibliothek für die Ermittlung von Systeminformationen
+* [PyQt 5, Version 5.15.2](https://riverbankcomputing.com/software/pyqt/intro) - Python-Schnittstelle zum GUI-Framework Qt 5
+* Unter Windows: [pywin32, Version 300](https://github.com/mhammond/pywin32) - Bibliothek für Zugriff auf die Windows API
+* [PyYAML, Version 5.4.1](https://pyyaml.org/) - Bibliothek für Im- und Export von YAML-Dateien
 
 Nähere Informationen zu den benötigten Fremdquellen finden sich in der Dokumentation.
 
 ### Installation und erster Start
-1. Herunterladen und Installieren von [Python 3.6.x](https://www.python.org/).
+1. Herunterladen und Installieren von [Python 3.9.x](https://www.python.org/).
 
     Entsprechend des persönlichen Bedarfs können Schritte 2, 3 und 4 entweder systemweit oder alternativ unter Verwendung von *virtualenv* durchgeführt werden.
 
@@ -36,22 +36,26 @@ Nähere Informationen zu den benötigten Fremdquellen finden sich in der Dokumen
     
 3. Installieren der benötigten Abhängigkeiten (in den Versionen, mit denen LiSCrypt 0.9 getestet wurde):
     ```
-    pip3 install base91==1.0.1 cryptography==2.6.1 psutil==5.6.1 PyQt5==5.12 PyYAML==5.1 pywin32==224  
+    pip3 install base91==1.0.1 cryptography==3.4.6 psutil==5.8.0 PyQt5==5.15.2 PyYAML==5.4.1 pywin32==300  
     ```
  
-3. Herunterladen des LiSCrypt-Quelltextes von https://github.com/MaWe2019/LiSCrypt_public/releases
+3. Herunterladen / Auspacken des LiSCrypt-Quelltextes, z.B. von https://github.com/MaWe2019/LiSCrypt_public/releases
 
 4. Starten des Programms:
     ```
     python3 -m Steuerung.LiSCrypt
     ```
-    oder Import in eine beliebige Python-IDE. Entwickelt wurde Python mit der Community-Variante von [PyCharm](https://www.jetbrains.com/pycharm/download/).
+    oder Import in eine beliebige Python-IDE. Entwickelt wurde LiSCrypt mit der Community-Variante von [PyCharm](https://www.jetbrains.com/pycharm/download/).
     
 5. Test aller Programmfunktionen (Verschlüsseln, Entschlüsseln, Vernichten) mit Dummy-Dateien.
 
 ### Ausrollen
 
-Zum Ausrollen von LiSCrypt in ausführbarer Form kann [PyInstaller](https://www.pyinstaller.org/) verwendet werden. Dabei ist insbesondere auf *hidden imports* und die Einbeziehung der [Visual C++ Runtime-Biblitoheken](https://support.microsoft.com/de-de/help/2977003/the-latest-supported-visual-c-downloads) zu achten. Unter macOS muss aktuell ein [Fork der Development-Version](https://github.com/pyinstaller/pyinstaller/pull/3832) von PyInstaller verwendet werden, damit Apple-Events unterstützt werden.
+Zum Ausrollen von LiSCrypt in ausführbarer Form kann [PyInstaller](https://www.pyinstaller.org/) verwendet werden. Dabei ist insbesondere auf *hidden imports* und die Einbeziehung der [Visual C++ Runtime-Biblitoheken](https://support.microsoft.com/de-de/help/2977003/the-latest-supported-visual-c-downloads) zu achten.
+
+### LiSCrypt Shell-Erweiterung (Windows)
+
+Unter Windows existiert seit Version 1.0.0 von LiSCrypt eine Shell-Erweiterung. Damit können die wesentlichen Programmfunktionen auch per Rechtsklick auf Dateien/Ordner ausgeführt werden. Die Shell-Erweiterung wurde mit Visual Studio 2019 in C++ unter Verwendung von ATL erstellt. Der Quelltext ist ebenfalls unter https://github.com/MaWe2019/LiSCrypt_public/releases verfübar.
 
 ## Beiträge zur Weiterentwicklung
 
@@ -83,6 +87,10 @@ Die Versionierung von LiSCrypt folgt dem [SemVer](http://semver.org/)-Schema. De
 
 LiSCrypt ist lizenziert unter der GNU General Public License Version 3 (GNU GPL v3). Den Lizenztext finden Sie in der Datei [COPYING](COPYING).
 
+## Sicherheitsaudits
+
+Für die Version 0.9.5 von LiSCrypt wurden zwei externe Sicherheitsprüfungen durchgeführt, bei denen auch das Verschlüsselungsverfahren in den Blick genommen wurde.
+
 ## Mitwirkende
 
 * Dr. Albert Kapune, Tests
@@ -90,4 +98,4 @@ LiSCrypt ist lizenziert unter der GNU General Public License Version 3 (GNU GPL 
 
 ## ToDo
 
-* Fertigstellung der (derzeit veralteten und lückenhaften) API-Dokumentation.
+* Verhalten bei parallelem Doppelklick auf mehrere verschlüsselte Dokumente

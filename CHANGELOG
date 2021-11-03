@@ -7,6 +7,91 @@ und die Versionierung des Projekts richtet sich nach [Semantic Versioning](http:
 ## [Unveröffentlicht]
 -
 
+## [1.0.9] - 2021-02-23
+### Changed
+Ui_MainWindow.Ui_MainWindow: Debugging-Loging-Level wird bei 'Bereit.' in Statuszeile angezeigt
+### Bug fix
+- LiSCrypt.QControllerWorkerThread: Debugging-print()-Anweisung in Methode fuehreFunktionAus() entfernt
+
+## [1.0.8] - 2021-02-19
+### Bug fix
+- LiSKonstanten.C_LOGGING_LEVEL auf logging.ERROR zurückgesetzt (irrelevant für pakettierten Betrieb)
+
+## [1.0.7] - 2021-02-18
+### Changed
+- Ui_PasswordDialog.Ui_PasswordDialog: Minimale Passwortlänge in Methode _checkInput() durch LiSKonstanzen.C_PASSWORT_SCHLUESSELDATEI_MINLAENGE ersetzt
+- Ui_PasswordDialog.Ui_PasswordDialog: _checkInput() in _ueberpruefeUndReservierePasswort() umbenannt
+- Ui_PasswordDialog.Ui_PasswordDialog: Einzelne Kommentare und Dokumentationsstrings ergänzt/korrigiert
+- LiSCrypt.py: Überprüfung des vom Passwortdialog zurückgebenen Passworts auf 0-Byte-String in QControllerWorkerThread._zeigePasswortDialog()
+- LiSCrypt.py: Verlagerung der Löschung der globalen Passwortreferenz (self._sPasswortString) von QControllerWorkerThread.fuehreFunktionAus() in QControllerWorkerThread._zeigePasswortDialog()
+- LiSAusnahmen.py: Erweiterung von QNoPasswordError um Möglichkeit, eine Fehlermeldung zu übergeben
+- LiSAnzeige.py: Leichte Anpassung des Textes im Über-Dialog zur Quelltextverfügbarkeit
+### Bug fix
+- LiSKrypto.py: Korrekte Auswertung der maximalen Dateigröße für AES-GCM 256
+
+## [1.0.6] - 2021-01-18
+### Changed
+- LiSWerkzeuge.py: Statische Methode Loggingwerkzeuge.loggeMitLoglevelDebugWennNichtPaketiert hinzugefügt und sensible logging.debug-Aufrufe darauf umgestellt
+- LiSKonstanten.py: Logischere Platzierung von C_LOGGING_LEVEL
+- LiSAnzeige.py: Über-Dialog: Details zur Zugänglichmachung des Quelltextes aktualisiert
+### Bug fix
+- Ui_PasswordDialog.py: Korrekte Einbindung eines Monospace-Font unter Windows und macOS
+
+## [1.0.5] - 2021-01-11
+### Changed
+- LiSWerkzeuge.py: Statische Methode zum Vergleich von Versionsstrings hinzugefügt (Stringwerkzeuge.vergleicheVersionen)
+- LiSKrypto.py: Nutzung von Stringwerkzeuge.vergleicheVersionen zum Vergleich mit der zur Entschlüsselung erforderlichen LiSCryptversion
+
+## [1.0.4] - 2021-01-11
+### Changed
+- LiSSingleton.py: Vervollständigung der Dokumentationskommentare
+
+## [1.0.3] - 2021-01-11
+### Changed
+- Alle Quelltextdateien: Anpassung der Jahreszahl der Veröffentlichung
+
+## [1.0.2] - 2020-12-18
+### Changed
+- LiSApplication.QFileOpenEventApplication: Referenzübergabe zur Instanz von QView (Haupt-Viewkomponente) wieder entfernt (zu Debugging-Zwecken hinzugefügt)
+
+## [1.0.1] - 2020-12-18
+### Changed
+- LiSApplication.QFileOpenEventApplication: Vereinigung mehrerer paralleler QFileOpenEvents (macOS) zu einem Prozesstart
+- LiSWerkzeuge.Prozesswrtkzeuge: Verschiebung vonermittleAnzahlLaufenderLiSCryptProzesse() in LiSSingleton.py; Einbeziehung der IQB-Version
+### Bug fix:
+- Ui_MainWindow.DQListWidget: Ausgabe der per Drag-and-Drop übergebenen Verzeichniseinträge wieder entfernt (zu Debugging-Zwecken hinzugefügt)
+- LiSCrypt.QControllerWorkerThread: Korrekte Parameterübergabe bei Emittierung des Signals C_FUNKTION_WIEDERHOLEN_BUTTON_SICHTBAR_SIGNAL
+
+## [1.0.0] - 2020-12-14
+### Added
+- Das zuletzt eingegebene Passwort kann nun bis zum Schließen des Programms zwischengespeichert werden (Wunsch des IQB)
+- Sonderfunktionen "Letzte Ver-/Entschlüsselung rückgängig machen" bzw. "Letzte Programmfunktion wiederholen", inkl. Status von "Originale vernichten"
+- ContextMenu Shell-Extension für Windows-Betriebssysteme zum Aufruf per Rechtsklick
+### Changed
+- Sicherheit: Verschleierte Speicherung der Konfigurationsdatei
+- Sicherheit: Blockade zu kurzer Passwörter und Schlüsseldateien (< 8 Zeichen) bei Verschlüsselung
+- Sicherheit: Erschwerung von core dumps unter unixoiden Betriebssystemen
+- Sicherheit: Überschreiben sensibler Strings und Bytesequenzen im Prozessspeicher mit 0-Werten
+- Debugging-Checks auf fälschlicherweise auf 0 gesetzte Bytesequenzen bei Verschlüsselung (permanent verfügbar)
+- Merken des aktuellen Passworts
+- Verhinderung der Anzeige eines 'gemerkten' Passworts
+- Kommandozeilenoption für 'Originale vernichten' hinzugefügt
+- Font im Passworteingabe- und Bestätigungsfeld auf 'monospace' (systemabhängiger Monospace-Font) gesetzt
+- Änderung Problemmeldung: "Bitte kontrollieren Sie das Protokoll." -> "Bitte beachten Sie die Fehlermeldungen."
+- Windows: Update auf vcredist_x86 2019 und vcredist_x64 2019 (s. https://support.microsoft.com/en-us/help/2977003/the-latest-supported-visual-c-downloads)
+- Vergleich Dateiendung '.lisx' bzw '.lisq' ist jetzt case insensitive
+- Bei Aufruf mit Parameterliste wird die Größe des Hauptfensters jetzt auf normal gesetzt, wenn das Hauptfenster vorher minimiert war
+- Überprüfung der Prozessliste auf 'liscrypt' vor Start als Master
+- Funktionsbuttons wechseln Farbe abhängig von der darüber auszuführenden Programmfunktion (schwarz/grün/rot)
+- Literale für Programmfunktionen ('Verschlüsseln'/'Entschlüsseln'/'Vernichten') durch globale Konstanten ersetzt
+- Portierung auf Python 3.9.x (Wegfall von os.stat_float_times(...))
+- Viele kleine Verbesserungen und Korrekturen
+### Bug fix:
+- Noncen für ChaCha20_V3 bzw. ChaCha20_V3_1 werden jetzt korrekterweise mithilfe des Zählers für ChaCha20 generiert (vorher irrtümlich Zähler für AESGCM_V3 verwendet)
+- Klick auf "Abbrechen" im Passwortdialog führt nun nicht mehr zum Programmabbruch
+- Aufruf mit Parameterübergabe produziert keine "Beschäftigt"-Meldung mehr, wenn keine Aktion ausgeführt wird (keine Übergabe von Dateinamen)
+- Das "Über LiSCrypt"-Menü weist nun für LiSCrypt IQB überall den zusatz 'IQB' aus
+
 ## [0.9.7] - 2019-04-17
 ### Changed
 - CERT.NRW: Austausch von pickle gegen yaml mit SafeLoader zur Vermeidung von Arbitrary Code Execution über Socket
