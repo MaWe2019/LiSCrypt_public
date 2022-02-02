@@ -7,6 +7,25 @@ und die Versionierung des Projekts richtet sich nach [Semantic Versioning](http:
 ## [Unveröffentlicht]
 -
 
+## [1.0.10] - 2022-01-16
+### Changed
+- Ale Jahresangaben in 2022 geändert
+- LiSVernichtung.py: Überarbeitung basierend auf neuestem Commit im Master-Branch von BleachBit (b561d95)
+- LiSWindowsWipe.py: Überarbeitung basierend auf neuestem Commit im Master-Branch von BleachBit (b561d95)
+- LiSWerkzeuge.py: Klasse Verzeichniswerkzeuge hinzugefügt
+- LiSWerkzeuge.Verzeichniswerkzeuge: Statische Methode Verzeichniswerkzeuge.istVerzeichnis(...) hinzugefügt
+- LiSCrypt.py: High-DPI-Scaling (wieder) deaktiviert
+### Bug fix:
+- Ui_MainWindow.Ui_MainWindow: Methode waehleSchluesselartPasswort_Kommandozeile(...) ergänzt
+- Ui_MainWindow.Ui_MainWindow: Methode waehleSchluesselartSchluesseldatei_KlickAufDateiFeld_OderKommandozeile in zwei Methoden aufgeteilt
+- LiSCrypt.QController: starteFunktionAusParameterliste verwendet jetzt Methode Ui_MainWindow.Ui_MainWindow.waehleSchluesselartPasswort_Kommandozeile(...)
+- LiSCrypt.QController: starteFunktionAusParameterliste wertet nach Schlüsseldateiauswahl jetzt aus, ob wirklich eine Schlüsseldatei aus gewählt wurde
+- LiSAnzeige.QView: waehleVerschluesselungMitPasswort() -> waehleVerschluesselungMitPasswort_Kommandozeile
+- LiSAnzeige.QView: waehleVerschluesselung liefert Wert zurück, ob tatsächlich eine Schlüsseldatei ausgewählt wurde
+- LiSWindowsWipe.py: Methode file_wipe(...) um obligatorisches Schließen des File-Handles ergänzt
+- psutil (Fremdpaket): Fehler behoben -> 3.9.0 (führte zum Abbruch von LiSCrypt beim Vernichten, wenn schreibgeschütztes Laufwerk eingebunden ist)
+- LiSAnzeige.QView: Vollständiger Name der Methode zeigeSchluesseldateiauswahlDialog(...) wieder hergestellt (führte zu Programmabbruch)
+
 ## [1.0.9] - 2021-02-23
 ### Changed
 Ui_MainWindow.Ui_MainWindow: Debugging-Loging-Level wird bei 'Bereit.' in Statuszeile angezeigt
