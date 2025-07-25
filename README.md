@@ -1,4 +1,4 @@
-# LiSCrypt 1.0.10
+# LiSCrypt 1.0.18
 LiSCrypt ist ein Programm zur symmetrischen Verschlüsselung von Einzeldateien unter Verwendung von AES-GCM-256 bzw. einer Kombination von ChaCha20 und HMAC für sehr große Dateien.
 
 Es wurde ursprünglich von der Qualitäts- und UnterstützungsAgentur - Landesinstitut für Schule in Nordrhein-Westfalen entwickelt.
@@ -9,34 +9,36 @@ Die folgenden Ausführungen sollen Ihnen helfen, eine lokale Kopie von LiSCrypt 
 ### Voraussetzungen
 Voraussetzungen für die Verwendung von LiSCrypt
 
-* Python 3.9.x
+* Python 3.12.x (Es wird empfohlen, CPython zu verwenden.)
 * Windows, macOS oder Linux
 
 ### Benötigte Bibliotheken
-LiSCrypt 1.0.10 wurde u.a. mit den im Folgenden angegebenen Versionen getestet. Möglicherweise funktionieren insb. neuere Versionen ebenfalls.
+LiSCrypt 1.0.18 wurde u.a. mit den im Folgenden angegebenen Versionen als lauffähig getestet. Möglicherweise funktionieren neuere Versionen ebenfalls.
 
-* [base91, Version 1.0.1](https://github.com/aberaud/base91-python) - Base91-Kodiere/-Dekodierer
-* [pyca/cryptography, Version 36.0.1](https://cryptography.io/en/latest/) - Kryptografie-Backend
-* [psutil, Version 5.9.0](https://psutil.readthedocs.io) - Bibliothek für die Ermittlung von Systeminformationen
-* [PyQt 5, Version 5.15.6](https://riverbankcomputing.com/software/pyqt/intro) - Python-Schnittstelle zum GUI-Framework Qt 5
-* Unter Windows: [pywin32, Version 303](https://github.com/mhammond/pywin32) - Bibliothek für Zugriff auf die Windows API
-* [PyYAML, Version 6.0](https://pyyaml.org/) - Bibliothek für Im- und Export von YAML-Dateien
+* [base91, Version 1.0.1](https://github.com/aberaud/base91-python) - Base91-Kodierer/-Dekodierer
+* [pathvalidate, Version 3.2.3](https://pypi.org/project/pathvalidate/) - Bibliothek zur Validierung von Pfad- und Dateinamen
+* [pyca/cryptography, Version 45.0.3](https://cryptography.io/en/latest/) - Kryptografie-Backend
+* [psutil, Version 7.0.0](https://psutil.readthedocs.io) - Bibliothek für die Ermittlung von Systeminformationen
+* [PySide6, Version 6.9.0](https://riverbankcomputing.com/software/pyqt/intro) - Python-Schnittstelle zum GUI-Framework Qt 6
+* Unter Windows: [pywin32, Version 310](https://github.com/mhammond/pywin32) - Bibliothek für Zugriff auf die Windows API
+* [PyYAML, Version 6.0.2](https://pyyaml.org/) - Bibliothek für Im- und Export von YAML-Dateien
 
 Nähere Informationen zu den benötigten Fremdquellen finden sich in der Dokumentation.
 
 ### Installation und erster Start
-1. Herunterladen und Installieren von [Python 3.9.x](https://www.python.org/).
+1. Herunterladen und Installieren von [Python 3.12.x](https://www.python.org/).
+   
+   Entsprechend dem persönlichen Bedarf können Schritte 2, 3 und 4 entweder systemweit oder alternativ unter Verwendung von *virtualenv* durchgeführt werden.
 
-    Entsprechend des persönlichen Bedarfs können Schritte 2, 3 und 4 entweder systemweit oder alternativ unter Verwendung von *virtualenv* durchgeführt werden.
 
 2. Update von pip:
     ```
     python3 -m pip install --upgrade pip
     ```
     
-3. Installieren der benötigten Abhängigkeiten (in den Versionen, mit denen LiSCrypt 1.0.10 getestet wurde):
+3. Installieren der benötigten Abhängigkeiten (in den Versionen, mit denen LiSCrypt 1.0.14 als lauffähig getestet wurde):
     ```
-    pip3 install base91==1.0.1 cryptography==36.0.1 psutil==5.9.0 PyQt5==5.15.6 PyYAML==6.0 pywin32==303  
+    pip3 install base91==1.0.1 cryptography==45.0.3 psutil==7.0.0 PySide6==6.9.0 PyYAML==6.0.2 pywin32==310  
     ```
    *Hinweis:* Das Paket pywin32 existiert nur unter Windows und muss z.B. unter macOS oder Linux ausgelassen werden.
 
@@ -90,7 +92,9 @@ LiSCrypt ist lizenziert unter der GNU General Public License Version 3 (GNU GPL 
 
 ## Sicherheitsaudits
 
-Für die Version 0.9.5 von LiSCrypt wurden zwei externe Sicherheitsprüfungen durchgeführt, bei denen auch das Verschlüsselungsverfahren in den Blick genommen wurde.
+* Für die Version 0.9.5 von LiSCrypt wurden zwei externe Sicherheitsprüfungen durchgeführt, bei denen auch das Verschlüsselungsverfahren in Form eines Code-Reviews in den Blick genommen wurde.
+* Für die Version 1.0.18 wurde eine weitere Sicherheitsprüfung in Form eines Code-Reviews durchgeführt
+
 
 ## Mitwirkende
 
@@ -100,4 +104,4 @@ Für die Version 0.9.5 von LiSCrypt wurden zwei externe Sicherheitsprüfungen du
 ## ToDo
 
 * Verhalten bei parallelem Doppelklick auf mehrere verschlüsselte Dokumente
-* Egränzung/Ausschwärfung der Quelltext-Dokumentation
+* Ergänzung/Ausschwärfung der Quelltext-Dokumentation

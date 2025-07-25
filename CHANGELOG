@@ -5,7 +5,76 @@ Das Format basiert auf [Keep a Changelog](http://keepachangelog.com/de/1.0.0/)
 und die Versionierung des Projekts richtet sich nach [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 ## [Unveröffentlicht]
--
+
+## [1.0.18] - 2025-06-05
+### Changed:
+- LiSCrypt.py: Zusätzliche Debug-Outputs der Nonce-Zählerwerte zur Sicherstellung der kryptographischen Sicherheit
+
+## [1.0.17] - 2025-06-03
+### Changed:
+- LiSCrypt.py: Rückverlagerung Verlagerung der Inkrementierung des Zählers
+- LiSCrypt.py: Zusätzliche Überprüfung auf Zählererhöhung in den Nonce-Berechnungsmethoden (in Reaktion auf CERT F-1.3) (2)
+- Beseitigung redaktioneller Ungenauigkeiten
+- pyca/cryptography auf Version 45.0.3 aktualisiert
+- PySide6 auf Version 6.9.0 aktualisiert
+
++ Change 2 ausgeschärft
+
+## [1.0.16] - 2025-04-25
+### Bug fix
+- LiSCrypt.py: QControllerWorkerThread->ermittleChaCha20_V3Schluessel(...): Beseitigung einer Ungenauigkeiten des vorherigen Bug fixes
+
+## [1.0.15] - 2025-04-25
+### Bug fix
+- LiSCrypt.py: QControllerWorkerThread->ermittleAESGCM_V3Schluessel(...): Ergänzung für den Fall, dass zwischen AESGCM und Chacha20 gewechselt wird
+- LiSCrypt.py: QControllerWorkerThread->ermittleChaCha20_V3Schluessel(...): Ergänzung für den Fall, dass zwischen AESGCM und Chacha20 gewechselt wird
+- Beseitigung kleinerer redaktioneller Ungenauigkeiten
+### Changed:
+- LiSCrypt.py: Verlagerung der Inkrementierung des Zählers der mit dem aktuellen Schlüssel durchgeführten AESGCM- und ChaCha20-Verschlüsselungen in die Nonce-Berechnungsmethoden (in Reaktion auf CERT F-1.3)
+- LiSCrypt.py: QDatei->_entschluesseln: Entfernung von unzulässigen Zeichen aus Originaldateiname (in Reaktion auf CERT F-1.1)
+- Ergänzung von requirements.txt um pathvalidate~=3.23
+
+## [1.0.14] - 2025-03-27
+### Bug fix
+- Beseitigung diverser kleiner Ungenauigkeiten
+- Korrektur: Initiale Sichtbarkeit des Umkehren- und Wiederholen-Buttons wieder auf False gesetzt
+### Changed
+- Entfernung diverser ungenutzter Imports
+- Migration von PyQt5 zu PySide6 (Version 6.8.2.1)
+- Paket pyca/cryptography auf Version 44.0.2 aktualisiert (war 43.0.3)
+- psutil auf Version 7.0.0 aktualisiert (war 6.1.0)
+- pywin32 auf Version 310 aktualisiert (war 308)
+- Anleitung für Endnutzer auf Version 1.0.14 aktualisiert
+- README.md auf Version 1.0.14 aktualisiert
+
+## [1.0.13] - 2024-11-08
+### Bug fix
+- LiSKonstanten.py: C_PROGRAMMNAME_BYTES und _SHA256 entfernt (wurde nicht verwendet)
+- LiSVernichtung.QVerzeichniseintrag: Type hint auf LiSCrypt.QController in __init__ zur Vermeidung eines circular import errors
+### Changed
+- LiSKrypto.QDatei: Methoden verschluesseln(...) und entschluesseln(...) verwenden jetzt die explizite Klasse AES256 aus pyca/cryptography (Neu seit Version 38.0.0) anstelle der generischen Variante AES
+- LiSKonstanten.py: C_AKTUELLER_LOGIN_BYTES hinzugefügt (Verwendung in LiSSingleton.py zur Identifikation eines durch den aktuellen Nutzer bereits gestarteten Sevrers)
+- Type hints zu allen Methodenparametern hinzugefügt
+- Update aller Texte auf 2018-2024
+- Python-Version auf Version 3.12.x aktualisiert (war 3.9.x)
+- Paket pyca/cryptograph auf Version 43.0.3 (war 36.0.1)
+- PyQt auf Version 5.15.11 aktualisiert (war 5.15.6)
+- PyYAML auf Version 6.0.2 aktualisiert (war 6.0)
+- psutil auf Version 6.1.0 aktualisiert (war 5.9.0)
+- pywin32 auf Version 308 aktualisiert (war 303)
+- requirements.txt (inkl. aktuellen Versionsangaben) zum Projekt und zum Git-Repository hinzugefügt
+
+## [1.0.12] - 2023-02-13
+### Bug fix
+- GUIKomponenten.Ui_MainWindow: Fenster-Zentrierung korrigiert
+### Changed
+- LiSAnzeige.py: Informationstext zum Bezug des Quelltextes angepasst
+
+## [1.0.11] - 2022-03-09
+Nur NRW-Version, keine äquivalente IQB-Version (da nicht erforderlich)
+### Bug fixes
+- LiSVernichtung.QVerzeichniseintrag: Methode _vernichten(...) um else-Bedingung für Fehlermeldung "Verzeichnis nicht leer" ergänzt
+- LiSAnzeige.QView: Methode aehleVerschluesselungMitPasswort_Kommandozeile(...) korrigiert
 
 ## [1.0.10] - 2022-01-16
 ### Changed
@@ -28,7 +97,7 @@ und die Versionierung des Projekts richtet sich nach [Semantic Versioning](http:
 
 ## [1.0.9] - 2021-02-23
 ### Changed
-Ui_MainWindow.Ui_MainWindow: Debugging-Loging-Level wird bei 'Bereit.' in Statuszeile angezeigt
+- Ui_MainWindow.Ui_MainWindow: Debugging-Loging-Level wird bei 'Bereit.' in Statuszeile angezeigt
 ### Bug fix
 - LiSCrypt.QControllerWorkerThread: Debugging-print()-Anweisung in Methode fuehreFunktionAus() entfernt
 
