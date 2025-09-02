@@ -1,4 +1,4 @@
-# LiSCrypt 1.0.18
+# LiSCrypt 1.0.19
 LiSCrypt ist ein Programm zur symmetrischen Verschlüsselung von Einzeldateien unter Verwendung von AES-GCM-256 bzw. einer Kombination von ChaCha20 und HMAC für sehr große Dateien.
 
 Es wurde ursprünglich von der Qualitäts- und UnterstützungsAgentur - Landesinstitut für Schule in Nordrhein-Westfalen entwickelt.
@@ -13,7 +13,7 @@ Voraussetzungen für die Verwendung von LiSCrypt
 * Windows, macOS oder Linux
 
 ### Benötigte Bibliotheken
-LiSCrypt 1.0.18 wurde u.a. mit den im Folgenden angegebenen Versionen als lauffähig getestet. Möglicherweise funktionieren neuere Versionen ebenfalls.
+LiSCrypt 1.0.19 wurde u.a. mit den im Folgenden angegebenen Versionen als lauffähig getestet. Möglicherweise funktionieren neuere Versionen ebenfalls.
 
 * [base91, Version 1.0.1](https://github.com/aberaud/base91-python) - Base91-Kodierer/-Dekodierer
 * [pathvalidate, Version 3.2.3](https://pypi.org/project/pathvalidate/) - Bibliothek zur Validierung von Pfad- und Dateinamen
@@ -36,7 +36,7 @@ Nähere Informationen zu den benötigten Fremdquellen finden sich in der Dokumen
     python3 -m pip install --upgrade pip
     ```
     
-3. Installieren der benötigten Abhängigkeiten (in den Versionen, mit denen LiSCrypt 1.0.14 als lauffähig getestet wurde):
+3. Installieren der benötigten Abhängigkeiten (in den Versionen, mit denen LiSCrypt 1.0.19 als lauffähig getestet wurde):
     ```
     pip3 install base91==1.0.1 cryptography==45.0.3 psutil==7.0.0 PySide6==6.9.0 PyYAML==6.0.2 pywin32==310  
     ```

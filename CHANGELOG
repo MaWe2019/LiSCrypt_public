@@ -6,6 +6,12 @@ und die Versionierung des Projekts richtet sich nach [Semantic Versioning](http:
 
 ## [Unveröffentlicht]
 
+## [1.0.19] - 2025-08-01
+### Bug fix:
+- LiSCrypt.py / LiSSingleton.py: Make LiSCrypt exit gracefully via terminating server thread beforehand
+- LiSCrypt.py: Entfernung überflüssiger Backslashes
+- Ui_MainWindow.py: Kleine Detailkorrekturen
+
 ## [1.0.18] - 2025-06-05
 ### Changed:
 - LiSCrypt.py: Zusätzliche Debug-Outputs der Nonce-Zählerwerte zur Sicherstellung der kryptographischen Sicherheit
